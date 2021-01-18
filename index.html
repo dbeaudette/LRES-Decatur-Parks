@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         html, body, #map {
@@ -22,7 +22,7 @@
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
-        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -51,11 +51,10 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[33.66851213058388,-84.38449690507593],[33.82970184301013,-84.1402440518921]]);
+        }).fitBounds([[33.691447124999996,-84.45135792293233],[33.931807875000004,-84.03363107706765]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
-        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
@@ -299,7 +298,7 @@
             };
             title.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/LRES_3.png" /> LRES': layer_LRES_3,'Does this park have a playground?<br /><table><tr><td style="text-align: center;"><img src="legend/Doesthisparkhaveaplayground_2_No0.png" /></td><td>No</td></tr><tr><td style="text-align: center;"><img src="legend/Doesthisparkhaveaplayground_2_Yes1.png" /></td><td>Yes</td></tr></table>': layer_Doesthisparkhaveaplayground_2,'Drivetime from LRES (Estimated)<br /><table><tr><td style="text-align: center;"><img src="legend/DrivetimefromLRESEstimated_1_5minutes0.png" /></td><td>5 minutes</td></tr><tr><td style="text-align: center;"><img src="legend/DrivetimefromLRESEstimated_1_10minutes1.png" /></td><td>10 minutes</td></tr><tr><td style="text-align: center;"><img src="legend/DrivetimefromLRESEstimated_1_15minutes2.png" /></td><td>15 minutes</td></tr></table>': layer_DrivetimefromLRESEstimated_1,"ESRI Gray (light)": layer_ESRIGraylight_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/LRES_3.png" /> LRES': layer_LRES_3,'Does this park have a playground?<br /><table><tr><td style="text-align: center;"><img src="legend/Doesthisparkhaveaplayground_2_No0.png" /></td><td>No</td></tr><tr><td style="text-align: center;"><img src="legend/Doesthisparkhaveaplayground_2_Yes1.png" /></td><td>Yes</td></tr></table>': layer_Doesthisparkhaveaplayground_2,'Drivetime from LRES (Estimated)<br /><table><tr><td style="text-align: center;"><img src="legend/DrivetimefromLRESEstimated_1_5minutesorless0.png" /></td><td>5 minutes or less</td></tr><tr><td style="text-align: center;"><img src="legend/DrivetimefromLRESEstimated_1_10minutesorless1.png" /></td><td>10 minutes or less</td></tr><tr><td style="text-align: center;"><img src="legend/DrivetimefromLRESEstimated_1_15minutesorless2.png" /></td><td>15 minutes or less</td></tr></table>': layer_DrivetimefromLRESEstimated_1,"ESRI Gray (light)": layer_ESRIGraylight_0,}).addTo(map);
         setBounds();
         </script>
     </body>
